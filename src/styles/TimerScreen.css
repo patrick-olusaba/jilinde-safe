@@ -1,0 +1,286 @@
+.timer-screen {
+  padding: 4px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fade-in-up 0.35s ease both;
+}
+
+/* ─── Clock ──────────────────────────────────────── */
+.timer-clock-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.timer-clock {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer-clock__svg {
+  width: 200px;
+  height: 200px;
+  transform: rotate(-90deg);
+}
+
+.timer-clock__track {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 6;
+}
+
+.timer-clock__progress {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 6;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.8s ease, stroke 0.3s ease;
+}
+
+.timer-clock__progress.danger {
+  stroke: var(--sos-red);
+}
+
+.timer-clock__center {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+
+.timer-clock__time {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.timer-clock__label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.timer-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.timer-status-badge.idle {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.timer-status-badge.active {
+  background: var(--safe-glow);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: var(--safe-green);
+}
+
+.timer-status-badge.danger {
+  background: var(--sos-glow);
+  border: 1px solid rgba(232, 41, 26, 0.3);
+  color: var(--sos-red-light);
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.status-dot.pulse {
+  animation: ping 1.2s ease infinite;
+}
+
+/* ─── Duration Card ──────────────────────────────── */
+.duration-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: var(--shadow-card);
+}
+
+.duration-card__label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.duration-presets {
+  display: flex;
+  gap: 8px;
+}
+
+.duration-preset {
+  flex: 1;
+  height: 40px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.duration-preset:hover {
+  border-color: var(--border-gold);
+  color: var(--text-primary);
+}
+
+.duration-preset.selected {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #080c18;
+}
+
+.duration-custom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.duration-custom__label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.duration-slider {
+  flex: 1;
+  accent-color: var(--gold);
+  height: 4px;
+  cursor: pointer;
+}
+
+.duration-custom__value {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  min-width: 32px;
+  text-align: right;
+}
+
+/* ─── Scenario Pills ─────────────────────────────── */
+.scenario-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.scenario-label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.scenario-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.scenario-pill {
+  height: 34px;
+  padding: 0 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition);
+}
+
+.scenario-pill:hover {
+  border-color: var(--border-gold);
+  color: var(--text-primary);
+}
+
+.scenario-pill.selected {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #080c18;
+  font-weight: 600;
+}
+
+.scenario-pill__icon { font-size: 14px; }
+
+/* ─── Timer Controls ─────────────────────────────── */
+.timer-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.timer-btn {
+  flex: 1;
+  height: 48px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition);
+}
+
+.timer-btn.start {
+  background: var(--gold);
+  color: #080c18;
+  box-shadow: var(--shadow-gold);
+}
+
+.timer-btn.start:hover {
+  background: #f7cf3a;
+  transform: translateY(-1px);
+}
+
+.timer-btn.safe {
+  background: var(--safe-green);
+  color: #fff;
+}
+
+.timer-btn.stop {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.timer-btn.full-width {
+  flex: none;
+  width: 100%;
+}

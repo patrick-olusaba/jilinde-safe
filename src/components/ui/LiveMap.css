@@ -1,0 +1,112 @@
+.livemap-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.livemap-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 14px 16px 10px;
+}
+
+.livemap-card__label {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.livemap-card__sublabel {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 1px;
+}
+
+.livemap-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--safe-green);
+  letter-spacing: 0.06em;
+}
+
+.livemap-badge__dot {
+  width: 6px;
+  height: 6px;
+  background: var(--safe-green);
+  border-radius: 50%;
+  animation: timer-pulse 1s ease infinite;
+}
+
+.livemap-stage {
+  height: 200px;
+  background: #0a0f1a;
+}
+
+/* Leaflet overrides for dark theme */
+.livemap-stage .leaflet-container {
+  background: #0a0f1a;
+}
+
+.livemap-stage .leaflet-tile-pane {
+  filter: brightness(0.45) saturate(0.3) hue-rotate(180deg);
+}
+
+.livemap-coords {
+  display: flex;
+  gap: 10px;
+  padding: 8px 16px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  color: var(--text-muted);
+  background: rgba(0,0,0,0.3);
+  justify-content: space-between;
+}
+
+/* Custom gold marker */
+.livemap-marker {
+  background: none !important;
+  border: none !important;
+}
+
+.livemap-marker__dot {
+  width: 14px;
+  height: 14px;
+  background: var(--gold);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(245, 197, 24, 0.6);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.livemap-marker__pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid rgba(245, 197, 24, 0.35);
+  animation: mark-pulse 2s ease-out infinite;
+}
+
+@keyframes mark-pulse {
+  0%   { width: 14px; height: 14px; opacity: 0.8; }
+  100% { width: 42px; height: 42px; opacity: 0; }
+}

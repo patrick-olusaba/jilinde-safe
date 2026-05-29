@@ -1,0 +1,23 @@
+.app-shell {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  background: var(--bg-base);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Screen Container ───────────────────────────── */
+.screen-container {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* ─── Screen Transitions ─────────────────────────── */
+.screen-container > * {
+  animation: fade-in-up 0.3s ease both;
+}

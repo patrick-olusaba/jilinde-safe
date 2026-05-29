@@ -1,0 +1,236 @@
+.family-screen {
+  padding: 4px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: fade-in-up 0.35s ease both;
+}
+
+/* ─── Upgrade prompt ────────────────────────────── */
+.family-upgrade {
+  text-align: center;
+  padding: 24px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.family-upgrade__icon {
+  font-size: 52px;
+}
+
+.family-upgrade__title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.family-upgrade__desc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  max-width: 300px;
+}
+
+.family-upgrade__features {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  width: 100%;
+  max-width: 280px;
+}
+
+.family-upgrade__feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.family-upgrade__check {
+  color: var(--safe-green);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.family-upgrade__btn {
+  width: 100%;
+  max-width: 300px;
+  padding: 14px;
+  margin-top: 8px;
+  background: var(--gold);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: #080c18;
+  cursor: pointer;
+  box-shadow: var(--shadow-gold);
+  transition: all var(--transition);
+}
+
+.family-upgrade__btn:hover {
+  background: #f7cf3a;
+  transform: translateY(-1px);
+}
+
+/* ─── Group SOS ──────────────────────────────────── */
+.family-sos-btn {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, rgba(232, 41, 26, 0.12), rgba(232, 41, 26, 0.04));
+  border: 1px solid rgba(232, 41, 26, 0.3);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: all var(--transition);
+}
+
+.family-sos-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, rgba(232, 41, 26, 0.2), rgba(232, 41, 26, 0.08));
+  border-color: var(--sos-red);
+}
+
+.family-sos-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.family-sos-btn__icon {
+  font-size: 28px;
+}
+
+.family-sos-btn__label {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--sos-red-light);
+}
+
+.family-sos-btn__hint {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+/* ─── Family Map ─────────────────────────────────── */
+.family-map {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.family-map__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+}
+
+.family-map__title {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.family-map__badge {
+  padding: 2px 8px;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--safe-green);
+}
+
+.family-map__stage {
+  height: 140px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.family-map__svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ─── Member List ────────────────────────────────── */
+.family-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.family-member-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  animation: fade-in-up 0.3s ease both;
+}
+
+.family-member__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.family-member__name {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.family-member__meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 3px;
+}
+
+.family-member__role {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 8px;
+  border-radius: var(--radius-full);
+}
+
+.family-member__role.parent {
+  background: rgba(245, 197, 24, 0.1);
+  color: var(--gold);
+}
+
+.family-member__role.child {
+  background: rgba(74, 144, 217, 0.1);
+  color: #4A90D9;
+}
+
+.family-member__phone {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.family-member__actions {
+  display: flex;
+  gap: 6px;
+}

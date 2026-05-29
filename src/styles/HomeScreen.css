@@ -1,0 +1,310 @@
+.home-screen {
+  padding: 4px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  animation: fade-in-up 0.35s ease both;
+}
+
+/* ─── Hero Tagline ──────────────────────────────── */
+.home-hero {
+  text-align: center;
+  padding: 8px 8px 0;
+}
+
+.home-hero__tagline {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+
+.home-hero__subtext {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* ─── SOS Stage ──────────────────────────────────── */
+.sos-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0 10px;
+}
+
+.sos-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sos-ring {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(232, 41, 26, 0.2);
+  animation: pulse-ring 2.4s ease-out infinite;
+  pointer-events: none;
+}
+
+.sos-ring:nth-child(2) {
+  animation-delay: 0.8s;
+}
+
+.sos-btn {
+  position: relative;
+  z-index: 2;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ff5a47 0%, #e8291a 40%, #b81d10 100%);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sos);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  animation: breathe 3s ease-in-out infinite;
+}
+
+.sos-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 44px rgba(232, 41, 26, 0.6), 0 2px 8px rgba(0,0,0,0.55);
+}
+
+.sos-btn:active {
+  transform: scale(0.96);
+}
+
+.sos-btn__label {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.06em;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.35);
+}
+
+.sos-btn.triggered {
+  animation: pulse-ring 0.5s ease infinite;
+  background: linear-gradient(145deg, #ff7a6a 0%, #ff3322 40%, #cc1a0a 100%);
+}
+
+.sos-hint {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+/* ─── Message Card ───────────────────────────────── */
+.message-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: var(--shadow-card);
+}
+
+.message-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.message-card__text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.message-card__text textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.55;
+  resize: none;
+  min-height: 44px;
+}
+
+.message-card__edit-btn {
+  width: 32px;
+  height: 32px;
+  background: rgba(245, 197, 24, 0.1);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  transition: background var(--transition);
+  color: var(--gold);
+}
+
+.message-card__edit-btn:hover {
+  background: rgba(245, 197, 24, 0.2);
+}
+
+.message-card__tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.message-tag {
+  height: 28px;
+  padding: 0 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ─── Quick Actions ──────────────────────────────── */
+.quick-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.quick-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: var(--shadow-card);
+}
+
+.quick-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.quick-card__icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.quick-card__title {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.quick-card__desc {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.quick-card.gold-accent {
+  border-color: var(--border-gold);
+  background: linear-gradient(135deg, rgba(245, 197, 24, 0.06), rgba(245, 197, 24, 0.01));
+}
+
+/* ─── SOS Overlay ────────────────────────────────── */
+.sos-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(180, 20, 10, 0.97), rgba(180, 20, 10, 0.95));
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  animation: fade-in 0.2s ease;
+  border-radius: inherit;
+}
+
+.sos-overlay__icon {
+  font-size: 56px;
+  animation: timer-pulse 1s ease infinite;
+}
+
+.sos-overlay__title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.sos-overlay__subtitle {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  text-align: center;
+  max-width: 260px;
+  line-height: 1.5;
+}
+
+.sos-overlay__cancel {
+  margin-top: 12px;
+  padding: 12px 32px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.sos-overlay__cancel:hover {
+  background: rgba(255,255,255,0.22);
+}
+
+.sos-countdown {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 0 0 36px rgba(255,255,255,0.25);
+}
